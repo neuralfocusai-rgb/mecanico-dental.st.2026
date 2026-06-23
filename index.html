@@ -4,462 +4,765 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mecánico Dental | Experiencia Premium 3D | Santa Teresita</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Variables de colores modernos y vibrantes */
+        /* ==========================================================================
+           1. VARIABLES Y CONFIGURACIÓN GENERAL
+           ========================================================================== */
         :root {
-            --bg-dark: #0f172a;
-            --bg-light: #f8fafc;
+            --bg-dark: #090d16;
+            --bg-card: #ffffff;
+            --bg-light: #f4f7fa;
             --primary: #0ea5e9;
-            --primary-dark: #0284c7;
+            --primary-gradient: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            --premium-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             --accent: #38bdf8;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --text-light: #f8fafc;
             --wa-color: #25D366;
-            --text-main: #334155;
-            --text-light: #f1f5f9;
+            --wa-hover: #20ba5a;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            outline: none;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-main);
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, .font-alt {
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Header con Glassmorphism (Efecto Vidrio) */
+        /* Personalización de la barra de desplazamiento */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 10px;
+        }
+
+        /* ==========================================================================
+           2. HEADER & NAVEGACIÓN (GLASSMORPHISM)
+           ========================================================================== */
         header {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 20px 0;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 15px 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
         }
 
         header h1 {
-            background: linear-gradient(to right, var(--primary-dark), var(--accent));
+            background: linear-gradient(to right, #0284c7, #38bdf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
-            letter-spacing: 2px;
-            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+            font-size: 1.6rem;
         }
 
-        /* Hero Carousel Rápido */
+        .nav-badge {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
+        }
+
+        /* ==========================================================================
+           3. HERO SECTION (CARRUSEL ULTRA-RÁPIDO CINEMÁTICO)
+           ========================================================================== */
         .hero {
             position: relative;
             height: 100vh;
+            width: 100%;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            margin-top: 60px;
+        }
+
+        .carousel-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
         }
 
         .carousel-slide {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
             opacity: 0;
-            transform: scale(1.1);
-            transition: opacity 0.8s ease-in-out, transform 3s ease-in-out;
-            z-index: 1;
+            transform: scale(1.15) rotate(0.02deg);
+            transition: opacity 0.8s ease-in-out, transform 2.8s ease-in-out;
         }
 
         .carousel-slide.active {
             opacity: 1;
-            transform: scale(1);
+            transform: scale(1) rotate(0deg);
         }
 
-        .overlay {
+        .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(2,132,199,0.6) 100%);
+            background: linear-gradient(135deg, rgba(9, 13, 22, 0.95) 0%, rgba(2, 132, 199, 0.55) 100%);
             z-index: 2;
         }
 
         .hero-content {
             position: relative;
             z-index: 3;
-            text-align: center;
             color: var(--text-light);
-            max-width: 800px;
-            padding: 20px;
+            max-width: 850px;
+            padding: 0 25px;
+            text-align: center;
         }
 
         .hero-content h2 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            line-height: 1.2;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            letter-spacing: -0.5px;
         }
 
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: 300;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            color: rgba(241, 245, 249, 0.9);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        /* Botón Moderno */
-        .btn-modern {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+        /* Botones Principales */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-premium {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-gradient);
             color: white;
-            padding: 18px 40px;
+            padding: 18px 38px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-radius: 50px;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+            transition: var(--transition-smooth);
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-modern:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(2, 132, 199, 0.6);
+        .btn-premium:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.5);
         }
 
-        /* Secciones y Efectos Scroll */
-        .section {
-            padding: 80px 20px;
-            max-width: 1100px;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        /* ==========================================================================
+           4. SECCIONES DE CONTENIDO & EFECTO 3D CARDS
+           ========================================================================== */
+        .section-wrapper {
+            padding: 100px 25px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.7s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Tarjetas 3D */
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .card-3d {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
+        .section-title-box {
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            margin-bottom: 60px;
+        }
+
+        .section-title-box h2 {
+            font-size: 2.6rem;
+            color: var(--bg-dark);
+            font-weight: 900;
             position: relative;
+            display: inline-block;
         }
 
-        .card-3d:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 50px rgba(14, 165, 233, 0.12);
+        .section-title-box p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 12px;
         }
 
-        .card-3d::before {
+        /* Contenedores de Tarjetas Inmersivas */
+        .grid-3d {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+        }
+
+        .card-premium-3d {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 45px 35px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03);
+            border: 1px solid rgba(14, 165, 233, 0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-premium-3d:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(14, 165, 233, 0.12);
+        }
+
+        .card-premium-3d::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 20px 20px 0 0;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: var(--primary-gradient);
         }
 
-        .card-3d h3 {
-            color: var(--bg-dark);
+        .card-premium-3d h3 {
             font-size: 1.5rem;
+            color: var(--bg-dark);
             margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .card-3d p {
-            color: #64748b;
+        .card-premium-3d p {
+            color: var(--text-muted);
             line-height: 1.8;
+            font-size: 1rem;
+            text-align: justify;
         }
 
-        /* NUEVA SECCIÓN: Galería de Odontología Premium */
-        .gallery-container {
+        /* ==========================================================================
+           5. GALERÍA DE ODONTOLOGÍA PREMIUM DE VANGUARDIA
+           ========================================================================== */
+        .premium-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
         }
 
-        .gallery-item {
+        .gallery-card-3d {
             position: relative;
-            height: 280px;
-            border-radius: 20px;
+            height: 320px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+            cursor: pointer;
         }
 
-        .gallery-item img {
+        .gallery-card-3d img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.12);
+        .gallery-card-3d:hover img {
+            transform: scale(1.15);
         }
 
-        .gallery-overlay {
+        .gallery-card-overlay {
             position: absolute;
-            bottom: 0; left: 0; width: 100%; height: 40%;
-            background: linear-gradient(to top, rgba(15,23,42,0.8), transparent);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(9, 13, 22, 0.85) 0%, rgba(9, 13, 22, 0) 60%);
             display: flex;
             align-items: flex-end;
-            padding: 20px;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
+            padding: 30px;
+            opacity: 1;
+            transition: var(--transition-smooth);
         }
 
-        /* Sección Opiniones */
-        .reviews-section {
-            background: var(--bg-dark);
+        .gallery-card-info h4 {
             color: white;
-            border-radius: 30px;
-            padding: 60px 40px;
-            margin: 60px 20px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        /* ==========================================================================
+           6. SECCIÓN OPINIONES REALES (DISEÑO GLASS OSCURO)
+           ========================================================================== */
+        .reviews-wrapper {
+            background: var(--premium-gradient);
+            color: white;
+            border-radius: 40px;
+            padding: 80px 40px;
+            margin: 40px 25px;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
         }
 
-        .review-box {
-            background: rgba(255,255,255,0.04);
+        .reviews-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .glass-review-box {
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 40px;
+            border-radius: 24px;
+            position: relative;
+            transition: var(--transition-smooth);
         }
 
-        .stars { color: #facc15; font-size: 1.2rem; margin-bottom: 10px; }
+        .glass-review-box:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-5px);
+        }
 
-        /* Botón Flotante WhatsApp Animado */
-        .wa-float {
+        .rating-stars {
+            color: #facc15;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .glass-review-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: rgba(241, 245, 249, 0.85);
+        }
+
+        .author-tag {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ==========================================================================
+           7. FORMULARIO INTERACTIVO (HACE FUNCIONAR "SOLICITAR PRESUPUESTO")
+           ========================================================================== */
+        .quote-section {
+            background: white;
+            border-radius: 32px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.04);
+            margin-top: 40px;
+            border: 1px solid rgba(14, 165, 233, 0.08);
+        }
+
+        .quote-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--bg-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 14px;
+            border: 2px solid #e2e8f0;
+            background: #f8fafc;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+        }
+
+        /* Info de Horarios dentro de Grid */
+        .hours-panel {
+            background: var(--bg-light);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-left: 6px solid var(--primary);
+        }
+
+        .hours-list-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1rem;
+        }
+
+        .hours-list-item:last-child {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           8. ANIMACIÓN DEL BOTÓN FLOTANTE MODERNO DE WHATSAPP
+           ========================================================================== */
+        .wa-floating-btn {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 40px;
+            right: 40px;
             background-color: var(--wa-color);
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 76px;
+            height: 76px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 35px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
             z-index: 9999;
             text-decoration: none;
-            animation: pulse-wa 2s infinite;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
         }
 
-        .wa-float:hover {
-            transform: scale(1.1) rotate(-10deg);
+        .wa-floating-btn:hover {
+            transform: scale(1.1) rotate(-8deg);
+            background-color: var(--wa-hover);
         }
 
-        .wa-float svg {
-            width: 40px;
-            height: 40px;
+        /* Ondas de radar continuas */
+        .wa-floating-btn::after, .wa-floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border-radius: 50%;
+            background-color: var(--wa-color);
+            opacity: 0.6;
+            z-index: -1;
+            animation: wa-radar 2.5s infinite;
+        }
+
+        .wa-floating-btn::before {
+            animation-delay: 1.2s;
+        }
+
+        .wa-floating-btn svg {
+            width: 42px;
+            height: 42px;
             fill: currentColor;
         }
 
-        @keyframes pulse-wa {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        @keyframes wa-radar {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.6); opacity: 0; }
         }
 
-        /* Footer */
+        /* ==========================================================================
+           9. REVELACIÓN AL HACER SCROLL & RESPONSIVE
+           ========================================================================== */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         footer {
             background: var(--bg-dark);
-            color: rgba(255,255,255,0.7);
+            color: rgba(241, 245, 249, 0.6);
             text-align: center;
-            padding: 40px 20px;
-            border-top: 5px solid var(--primary);
+            padding: 45px 20px;
+            font-size: 0.95rem;
+            border-top: 6px solid var(--primary);
+        }
+
+        @media (max-width: 992px) {
+            .quote-form-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero-content h2 { font-size: 2.6rem; }
         }
 
         @media (max-width: 768px) {
-            .hero-content h2 { font-size: 2.2rem; }
-            .section { padding: 60px 20px; }
-            .wa-float { width: 60px; height: 60px; bottom: 20px; right: 20px; }
-            .wa-float svg { width: 35px; height: 35px; }
+            .section-wrapper { padding: 60px 20px; }
+            .wa-floating-btn { width: 64px; height: 64px; bottom: 25px; right: 25px; }
+            .wa-floating-btn svg { width: 34px; height: 34px; }
+            .btn-container { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Mecánico Dental</h1>
+        <div class="nav-container">
+            <h1>Mecánico Dental</h1>
+            <div class="nav-badge">Atención Directa</div>
+        </div>
     </header>
 
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio Fijo" class="carousel-slide active">
-        <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis de Precisión" class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80" alt="Clínica Moderna" class="carousel-slide">
+        <div class="carousel-container">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio de Vanguardia" class="carousel-slide active">
+            <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis Estética" class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80" alt="Clínica Odontológica Digital" class="carousel-slide">
+        </div>
         
-        <div class="overlay"></div>
+        <div class="hero-overlay"></div>
         
-        <div class="hero-content reveal active">
+        <div class="hero-content">
             <h2>Arte y precisión en cada sonrisa</h2>
-            <p>Soluciones dentales de vanguardia, rápidas y a medida en Santa Teresita.</p>
-            <a href="https://wa.me/549XXXXXXXXXX" class="btn-modern">Solicitar Presupuesto</a>
+            <p>Soluciones dentales de vanguardia, rápidas y confeccionadas a medida en Santa Teresita.</p>
+            <div class="btn-container">
+                <button onclick="scrollToQuote()" class="btn-premium">Solicitar Presupuesto</button>
+                <button onclick="openGeneralWhatsapp()" class="btn-premium btn-outline">Consulta Rápida</button>
+            </div>
         </div>
     </section>
 
-    <section class="section reveal">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.5rem; color: var(--bg-dark);">Nuestro Laboratorio</h2>
-            <p style="color: #64748b; font-size: 1.2rem; margin-top: 10px;">Excelencia respaldada por profesionales.</p>
+    <section class="section-wrapper scroll-reveal">
+        <div class="section-title-box">
+            <h2>Nuestro Laboratorio</h2>
+            <p>Excelencia técnica respaldada por profesionales comprometidos.</p>
         </div>
 
-        <div class="card-container">
-            <div class="card-3d">
+        <div class="grid-3d">
+            <div class="card-premium-3d">
                 <h3>Servicios Especializados</h3>
                 <p>En nuestro centro especializado en diseño y elaboración de prótesis dentales, ofrecemos soluciones personalizadas para cada necesidad. Contamos con un equipo de expertos que se dedica a crear prótesis fijas, flexibles y removibles, así como implantes de alta calidad.</p>
             </div>
             
-            <div class="card-3d">
+            <div class="card-premium-3d">
                 <h3>Reparaciones en el Acto</h3>
                 <p>Realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que puedas disfrutar de tu sonrisa sin demoras. Ubicados en Santa Teresita, estamos comprometidos con la salud bucal de nuestros pacientes.</p>
             </div>
         </div>
     </section>
 
-    <section class="section reveal">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="font-size: 2.3rem; color: var(--bg-dark);">Tecnología & Calidad Premium</h2>
-            <p style="color: #64748b;">Estándares internacionales aplicados a cada diseño digital y pieza confeccionada.</p>
+    <section class="section-wrapper scroll-reveal">
+        <div class="section-title-box">
+            <h2>Tecnología & Calidad Premium</h2>
+            <p>Visualiza el nivel estético e internacional aplicado a cada una de nuestras piezas confeccionadas.</p>
         </div>
-        
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Clínica Dental Premium">
-                <div class="gallery-overlay">Infraestructura Moderna</div>
+
+        <div class="premium-gallery">
+            <div class="gallery-card-3d">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Infraestructura Odontológica">
+                <div class="gallery-card-overlay">
+                    <div class="gallery-card-info">
+                        <h4>Infraestructura Moderna</h4>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Alta Tecnología Odontológica">
-                <div class="gallery-overlay">Precisión Digital CAD/CAM</div>
+            <div class="gallery-card-3d">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="CAD/CAM Dental">
+                <div class="gallery-card-overlay">
+                    <div class="gallery-card-info">
+                        <h4>Precisión Digital CAD/CAM</h4>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=600&q=80" alt="Estética Dental Avanzada">
-                <div class="gallery-overlay">Materiales de Alta Gama</div>
+            <div class="gallery-card-3d">
+                <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=600&q=80" alt="Materiales de Alta Gama">
+                <div class="gallery-card-overlay">
+                    <div class="gallery-card-info">
+                        <h4>Materiales de Alta Gama</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="reviews-section reveal">
-        <h2 style="font-size: 2.2rem; margin-bottom: 40px; text-align: center;">Lo que dicen nuestros pacientes</h2>
-        
-        <div class="review-box">
-            <div class="stars">★★★★★</div>
-            <p><em>"Un genio total me atendió en el día, estaba de vacaciones acá en Santa Teresita y me salvó, muy cordial y atento en todo sentido. Gracias."</em></p>
-            <h4 style="margin-top: 15px; color: var(--accent);">- Rocio Perez</h4>
-        </div>
+    <section class="section-wrapper scroll-reveal">
+        <div class="reviews-wrapper">
+            <div class="section-title-box" style="margin-bottom: 20px;">
+                <h2 style="color: white;">Lo que dicen nuestros pacientes</h2>
+                <p style="color: rgba(241, 245, 249, 0.6);">Experiencias auténticas verificadas en Google Maps.</p>
+            </div>
 
-        <div class="review-box">
-            <div class="stars">★★★★★</div>
-            <p><em>"Muy recomendable, buen trabajo, buen trato, me salvó con un trabajo súper prolijo."</em></p>
-            <h4 style="margin-top: 15px; color: var(--accent);">- Marcelo Villalba</h4>
+            <div class="reviews-grid">
+                <div class="glass-review-box">
+                    <div class="rating-stars">★★★★★</div>
+                    <p>"Un genio total me atendió en el día , estaba de vacaciones acá en santa Teresita & me salvo , muy cordial y atento en todo sentido . Gracias"</p>
+                    <div class="author-tag">
+                        <span class="author-name">Rocio Perez</span>
+                    </div>
+                </div>
+
+                <div class="glass-review-box">
+                    <div class="rating-stars">★★★★★</div>
+                    <p>"Muy recomendable,buen trabajo ,buen trato ,me salvó con un trabajo súper prolijo"</p>
+                    <div class="author-tag">
+                        <span class="author-name">Marcelo Villalba</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section reveal">
-        <div class="card-container" style="margin-top: 0;">
-            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-left: 5px solid var(--primary);">
-                <h3 style="color: var(--primary-dark); font-size: 1.4rem;">Horarios de Atención</h3>
-                <p style="margin-bottom: 5px;"><strong>Lunes a Viernes:</strong> 9:00 a.m. – 8:00 p.m.</p>
-                <p style="margin-bottom: 5px;"><strong>Sábado:</strong> 9:00 a.m. – 12:00 p.m.</p>
-                <p><strong>Domingo:</strong> Cerrado</p>
-            </div>
-            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-left: 5px solid var(--primary);">
-                <h3 style="color: var(--primary-dark); font-size: 1.4rem;">Ubicación</h3>
-                <p><strong>Santa Teresita, Buenos Aires.</strong></p>
-                <p style="margin-top: 15px; font-size: 0.95rem; color: #64748b;">Atención inmediata y soluciones directas de laboratorio.</p>
-            </div>
+    <section id="presupuesto-seccion" class="section-wrapper scroll-reveal">
+        <div class="section-title-box">
+            <h2>Planificación de Consultas</h2>
+            <p>Calcula y envía tus requerimientos directamente al especialista de guardia.</p>
         </div>
-        
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="https://wa.me/549XXXXXXXXXX" class="btn-modern">Solicitá una Consulta Integral</a>
+
+        <div class="quote-section">
+            <div class="quote-form-grid">
+                
+                <div>
+                    <h3 style="margin-bottom: 25px; font-weight: 700;">Solicitud de Presupuesto Inmediato</h3>
+                    
+                    <div class="form-group">
+                        <label for="form-name">Nombre Completo</label>
+                        <input type="text" id="form-name" class="form-control" placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-service">Servicio Requerido</label>
+                        <select id="form-service" class="form-control">
+                            <option value="Prótesis Fijas / Flexibles / Removibles">Prótesis (Fija, Flexible o Removible)</option>
+                            <option value="Implantes Dentales">Implantes de Alta Calidad</option>
+                            <option value="Reparación en el Acto Urgent">Reparación en el Acto / Urgencia</option>
+                            <option value="Consulta General">Otro Diagnóstico Integral</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-message">Detalles del caso o Comentarios adicionales</label>
+                        <textarea id="form-message" class="form-control" rows="4" placeholder="Cuéntanos brevemente qué necesitas solucionar..."></textarea>
+                    </div>
+
+                    <button onclick="sendBudgetForm()" class="btn-premium" style="width: 100%; border-radius: 14px;">
+                        Enviar Solicitud a WhatsApp
+                    </button>
+                </div>
+
+                <div class="hours-panel">
+                    <div>
+                        <h3 style="margin-bottom: 10px; font-weight: 700; color: var(--bg-dark);">Horarios de Atención</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;">
+                            Ubicados estratégicamente en Santa Teresita, Buenos Aires.
+                        </p>
+                        
+                        <div class="hours-list-item">
+                            <strong>Lunes</strong> <span>9:00 a.m. – 8:00 p.m.</span>
+                        </div>
+                        <div class="hours-list-item">
+                            <strong>Martes</strong> <span>9:00 a.m. – 8:00 p.m.</span>
+                        </div>
+                        <div class="hours-list-item">
+                            <strong>Miércoles</strong> <span>9:00 a.m. – 8:00 p.m.</span>
+                        </div>
+                        <div class="hours-list-item">
+                            <strong>Jueves</strong> <span>9:00 a.m. – 8:00 p.m.</span>
+                        </div>
+                        <div class="hours-list-item">
+                            <strong>Viernes</strong> <span>9:00 a.m. – 8:00 p.m.</span>
+                        </div>
+                        <div class="hours-list-item">
+                            <strong>Sábado</strong> <span>9:00 a.m. – 12:00 p.m.</span>
+                        </div>
+                        <div class="hours-list-item" style="color: #ef4444;">
+                            <strong>Domingo</strong> <span>Cerrado</span>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 20px; font-style: italic;">
+                        * Las reparaciones mecánicas se procesan de forma inmediata en el propio laboratorio.
+                    </p>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <a href="https://wa.me/549XXXXXXXXXX" class="wa-float" target="_blank" rel="noopener noreferrer">
+    <div onclick="openGeneralWhatsapp()" class="wa-floating-btn" title="Chatear con el Especialista">
         <svg viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
         </svg>
-    </a>
+    </div>
 
     <footer>
         <p>&copy; 2026 Mecánico Dental - Santa Teresita. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        // Lógica del Carrusel ACELERADA a 2.5 segundos (2500ms)
-        const slides = document.querySelectorAll('.carousel-slide');
-        let currentSlide = 0;
-
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        setInterval(nextSlide, 2500);
-
-        // Animación de Aparición Dinámica al hacer Scroll
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        };
-
-        const revealOptions = {
-            threshold: 0.12,
-            rootMargin: "0px 0px -40px 0px"
-        };
-
-        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-
-        revealElements.forEach(el => {
-            revealObserver.observe(el);
-        });
-    </script>
-</body>
-</html>
+    
