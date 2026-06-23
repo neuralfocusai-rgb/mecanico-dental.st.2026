@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecánico Dental | Santa Teresita</title>
+    <style>
+        /* Estilos Generales y Variables */
+        :root {
+            --primary-color: #003b5c;
+            --accent-color: #25d366;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Cabecera */
+        header {
+            background: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Carrusel Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 60px; /* Compensa el header fijo */
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 30, 50, 0.6);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Botón WhatsApp */
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn:hover {
+            background: #128c7e;
+            transform: scale(1.05);
+        }
+
+        /* Secciones de Contenido */
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .services-text {
+            text-align: justify;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Grilla de Horarios y Contacto */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-box {
+            background: var(--bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .info-box h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box ul li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Opiniones */
+        .reviews {
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: "“";
+            font-size: 4rem;
+            color: #ccc;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-family: serif;
+        }
+
+        .review-author {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-style: normal;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mecánico Dental</h1>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio Dental" class="carousel-slide active">
+        <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis Dental" class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1600170560882-96944b360ea1?auto=format&fit=crop&w=1920&q=80" alt="Herramientas Dentales" class="carousel-slide">
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h2>Tu sonrisa, nuestra prioridad</h2>
+            <p>Soluciones dentales rápidas, precisas y a medida en Santa Teresita.</p>
+            <a href="https://wa.me/549XXXXXXXXXX" class="btn">Contactar ahora</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <h3>Sobre Nuestro Centro</h3>
+        <p class="services-text">
+            En nuestro centro especializado en diseño y elaboración de prótesis dentales, ofrecemos soluciones personalizadas para cada necesidad. Contamos con un equipo de expertos que se dedica a crear <strong>prótesis fijas, flexibles y removibles</strong>, así como <strong>implantes de alta calidad</strong>.
+        </p>
+        <p class="services-text">
+            Realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que puedas disfrutar de tu sonrisa sin demoras. Ubicados en Santa Teresita, estamos comprometidos con la salud bucal de nuestros pacientes.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>Horarios de Atención</h4>
+                <ul>
+                    <li><span>Lunes a Viernes</span> <span>9:00 a.m. – 8:00 p.m.</span></li>
+                    <li><span>Sábado</span> <span>9:00 a.m. – 12:00 p.m.</span></li>
+                    <li><span>Domingo</span> <span>Cerrado</span></li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>Ubicación y Contacto</h4>
+                <p><strong>Ubicación:</strong> Santa Teresita, Buenos Aires.</p>
+                <br>
+                <p><strong>Atención Rápida:</strong> Reparaciones en el acto y presupuestos personalizados.</p>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h3>Opiniones de nuestros pacientes</h3>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                "Un genio total me atendió en el día, estaba de vacaciones acá en Santa Teresita y me salvó, muy cordial y atento en todo sentido. Gracias."
+                <span class="review-author">- Rocio Perez</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                "Muy recomendable, buen trabajo, buen trato, me salvó con un trabajo súper prolijo."
+                <span class="review-author">- Marcelo Villalba</span>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+             <a href="https://wa.me/549XXXXXXXXXX" class="btn">Solicitar Turno o Presupuesto</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mecánico Dental - Santa Teresita. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            // Cambia de imagen cada 4 segundos (4000 milisegundos)
+            setInterval(nextSlide, 4000);
+        });
+    </script>
+</body>
+</html>
