@@ -3,952 +3,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecánico Dental | Experiencia Premium | Santa Teresita</title>
     
+    <!-- ======================================================================
+         OPTIMIZACIÓN ULTRA SEO B2B (Meta Etiquetas y Clúster Semántico)
+         ====================================================================== -->
+    <title>Laboratorio Dental B2B | Mecánico Dental en Santa Teresita para Odontólogos</title>
+    <meta name="description" content="Laboratorio mecánico dental en Santa Teresita exclusivo para profesionales y clínicas. Especialistas en prótesis fijas, flexibles, CAD/CAM y tiempos de entrega garantizados.">
+    <meta name="keywords" content="laboratorio dental, mecánico dental, prótesis para odontólogos, laboratorio de prótesis, Santa Teresita, aliado técnico dental, B2B odontología">
+    <meta name="author" content="Laboratorio Dental Santa Teresita">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph para compartir en WhatsApp/Redes de forma profesional -->
+    <meta property="og:title" content="Laboratorio Dental | Aliado Técnico para Clínicas">
+    <meta property="og:description" content="Terceriza tus trabajos de mecánica dental con la mayor precisión y puntualidad en La Costa.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema.org para Google (Define estrictamente que es un Laboratorio, no Consultorio) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DentalLaboratory",
+      "name": "Laboratorio Mecánico Dental Santa Teresita",
+      "description": "Servicios de mecánica dental de alta precisión para odontólogos y clínicas dentales.",
+      "url": "https://mecanico-dental-st-2026.vercel.app/",
+      "telephone": "+5492257663924",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Teresita",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+      ],
+      "areaServed": "Partido de La Costa"
+    }
+    </script>
+
+    <!-- Fuentes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* ==========================================================================
-           1. VARIABLES Y CONFIGURACIÓN GENERAL
+           1. VARIABLES Y RESET B2B CORPORATIVO
            ========================================================================== */
         :root {
-            --bg-dark: #090d16;
+            --bg-dark: #0f172a;
             --bg-card: #ffffff;
-            --bg-light: #f4f7fa;
-            --primary: #0ea5e9;
-            --primary-gradient: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            --bg-light: #f8fafc;
+            --primary: #0284c7; /* Tono azul médico/profesional más sobrio */
+            --primary-gradient: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
             --premium-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             --accent: #38bdf8;
             --text-main: #1e293b;
-            --text-muted: #64748b;
-            --text-light: #f8fafc;
+            --text-muted: #475569;
+            --text-light: #f1f5f9;
             --wa-color: #25D366;
-            --wa-hover: #20ba5a;
+            --wa-hover: #1da851;
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            outline: none;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); color: var(--text-main); overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, h4, .font-alt {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Personalización de la barra de desplazamiento */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-light);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-            border-radius: 10px;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-light); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
         /* ==========================================================================
-           2. HEADER & NAVEGACIÓN (GLASSMORPHISM)
+           2. HEADER CORPORATIVO
            ========================================================================== */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 18px 0;
-            z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-            transition: var(--transition-smooth);
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            padding: 15px 0; z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 25px;
+            max-width: 1200px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center; padding: 0 25px;
         }
 
         header h1 {
-            background: linear-gradient(to right, #0284c7, #38bdf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            letter-spacing: 1.5px;
-            font-size: 1.6rem;
+            color: var(--primary); font-weight: 900; letter-spacing: 1px; font-size: 1.5rem;
+            display: flex; align-items: center; gap: 10px;
         }
 
         .nav-badge {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
+            background: var(--bg-dark); color: white; padding: 6px 16px;
+            border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
         /* ==========================================================================
-           3. HERO SECTION (CARRUSEL ULTRA-RÁPIDO CINEMÁTICO)
+           3. HERO B2B (Dirigido al Odontólogo)
            ========================================================================== */
         .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative; height: 100vh; width: 100%;
+            overflow: hidden; display: flex; align-items: center; justify-content: center;
         }
 
-        .carousel-container {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1;
-        }
+        .carousel-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
 
         .carousel-slide {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transform: scale(1.15) rotate(0.02deg);
-            transition: opacity 0.8s ease-in-out, transform 2.8s ease-in-out;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; opacity: 0; transform: scale(1.1);
+            transition: opacity 1s ease, transform 3s ease;
         }
-
-        .carousel-slide.active {
-            opacity: 1;
-            transform: scale(1) rotate(0deg);
-        }
+        .carousel-slide.active { opacity: 1; transform: scale(1); }
 
         .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(9, 13, 22, 0.92) 0%, rgba(2, 132, 199, 0.55) 100%);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(2, 132, 199, 0.7) 100%);
             z-index: 2;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 3;
-            color: var(--text-light);
-            max-width: 850px;
-            padding: 0 25px;
-            text-align: center;
+            position: relative; z-index: 3; color: var(--text-light);
+            max-width: 900px; padding: 0 25px; text-align: center;
         }
 
-        .hero-content h2 {
-            font-size: 3.8rem;
-            font-weight: 900;
-            line-height: 1.15;
-            margin-bottom: 25px;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            letter-spacing: -0.5px;
-        }
+        .hero-content h2 { font-size: 3.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 20px; text-shadow: 0 5px 20px rgba(0,0,0,0.4); }
+        .hero-content p { font-size: 1.2rem; font-weight: 300; margin-bottom: 40px; color: #cbd5e1; }
 
-        .hero-content p {
-            font-size: 1.35rem;
-            font-weight: 300;
-            margin-bottom: 45px;
-            color: rgba(241, 245, 249, 0.9);
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
+        .btn-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
-        /* Botones Principales */
-        .btn-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .btn-primary {
+            background: var(--primary); color: white; padding: 16px 35px;
+            font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase;
+            border-radius: 8px; text-decoration: none; border: none; cursor: pointer;
+            box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); transition: var(--transition-smooth);
         }
-
-        .btn-premium {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-gradient);
-            color: white;
-            padding: 18px 38px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
-            transition: var(--transition-smooth);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-premium:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.5);
-        }
+        .btn-primary:hover { background: #0369a1; transform: translateY(-3px); }
 
         .btn-outline {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.4);
+            background: transparent; border: 2px solid rgba(255, 255, 255, 0.6);
             box-shadow: none;
         }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: white; }
 
-        .btn-outline:hover {
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
-        }
+        .ribbon-bar { background: var(--bg-dark); color: white; padding: 12px; text-align: center; font-size: 0.9rem; font-weight: 500; }
+        .ribbon-bar span { color: var(--accent); font-weight: 700; }
 
-        /* Bar informativa de cinta */
-        .ribbon-bar {
-            background: var(--bg-dark);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.95rem;
-            border-bottom: 2px solid rgba(14, 165, 233, 0.3);
-        }
+        /* ==========================================================================
+           4. SECCIONES B2B Y TARJETAS TÉCNICAS
+           ========================================================================== */
+        .section-wrapper { padding: 90px 25px; max-width: 1200px; margin: 0 auto; }
         
-        .ribbon-bar span {
-            color: var(--accent);
-            font-weight: 700;
+        .section-title-box { text-align: center; margin-bottom: 60px; }
+        .section-title-box h2 { font-size: 2.4rem; color: var(--bg-dark); font-weight: 800; }
+        .section-title-box p { color: var(--text-muted); font-size: 1.1rem; margin-top: 15px; max-width: 700px; margin-inline: auto; }
+
+        .grid-3d { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+        .card-tech {
+            background: var(--bg-card); border-radius: 12px; padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #f1f5f9;
+            transition: var(--transition-smooth); position: relative; overflow: hidden;
         }
+        .card-tech:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(2, 132, 199, 0.1); }
+        .card-tech::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); }
+
+        .card-tech h3 { font-size: 1.3rem; color: var(--bg-dark); margin-bottom: 15px; font-weight: 700; }
+        .card-tech p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
 
         /* ==========================================================================
-           4. SECCIONES DE CONTENIDO & EFECTO 3D CARDS
+           5. FLUJO DE TRABAJO PARA CLÍNICAS (WORKFLOW)
            ========================================================================== */
-        .section-wrapper {
-            padding: 100px 25px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .workflow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        
+        .workflow-step {
+            background: white; border: 1px dashed #cbd5e1; border-radius: 12px;
+            padding: 30px 20px; text-align: center;
         }
-
-        .section-title-box {
-            text-align: center;
-            margin-bottom: 60px;
+        .step-number {
+            width: 40px; height: 40px; background: var(--primary); color: white;
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 15px auto; font-weight: bold; font-size: 1.2rem;
         }
-
-        .section-title-box h2 {
-            font-size: 2.6rem;
-            color: var(--bg-dark);
-            font-weight: 900;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title-box p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-top: 12px;
-        }
-
-        /* Contenedores de Tarjetas Inmersivas */
-        .grid-3d {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 40px;
-        }
-
-        .card-premium-3d {
-            background: var(--bg-card);
-            border-radius: 24px;
-            padding: 45px 35px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03);
-            border: 1px solid rgba(14, 165, 233, 0.05);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-premium-3d:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(14, 165, 233, 0.12);
-        }
-
-        .card-premium-3d::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 6px;
-            background: var(--primary-gradient);
-        }
-
-        .card-premium-3d h3 {
-            font-size: 1.5rem;
-            color: var(--bg-dark);
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .card-premium-3d p {
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 1rem;
-            text-align: justify;
-        }
+        .workflow-step h4 { color: var(--bg-dark); margin-bottom: 10px; }
 
         /* ==========================================================================
-           5. BLOQUE DE PROCESO DE TRABAJO PASO A PASO
+           6. RESEÑAS B2C JUSTIFICADAS PARA B2B
            ========================================================================== */
-        .process-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+        .reviews-b2b-wrapper { background: var(--bg-dark); color: white; border-radius: 20px; padding: 70px 40px; margin: 40px 25px; }
+        
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        
+        .review-card {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px; border-radius: 12px;
         }
-
-        .process-step {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px dashed #cbd5e1;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        .process-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-gradient);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
-        }
-
-        .process-step h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--bg-dark);
-        }
-
-        .process-step p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
+        .stars { color: #facc15; margin-bottom: 10px; }
+        .review-card p { font-style: italic; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; }
+        .review-author { margin-top: 20px; font-weight: 600; color: var(--accent); }
 
         /* ==========================================================================
-           6. GALERÍA DE ODONTOLOGÍA PREMIUM DE VANGUARDIA
+           7. FORMULARIO B2B Y HORARIOS OFICIALES
            ========================================================================== */
-        .premium-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
+        .b2b-contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; }
 
-        .gallery-card-3d {
-            position: relative;
-            height: 320px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
-            cursor: pointer;
-        }
+        .b2b-form { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--bg-dark); }
+        .form-control { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: inherit; transition: var(--transition-smooth); background: #f8fafc; }
+        .form-control:focus { border-color: var(--primary); background: white; box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1); }
 
-        .gallery-card-3d img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+        .hours-panel { background: #f1f5f9; padding: 40px; border-radius: 16px; border-left: 5px solid var(--primary); }
+        .hours-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e2e8f0; font-size: 0.95rem; }
+        .hours-item:last-child { border-bottom: none; }
 
-        .gallery-card-3d:hover img {
-            transform: scale(1.15);
-        }
-
-        .gallery-card-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(9, 13, 22, 0.85) 0%, rgba(9, 13, 22, 0) 60%);
-            display: flex;
-            align-items: flex-end;
-            padding: 30px;
-            opacity: 1;
+        /* ==========================================================================
+           8. BOTÓN FLOTANTE WHATSAPP (Optimizado)
+           ========================================================================== */
+        .wa-btn {
+            position: fixed; bottom: 30px; right: 30px; background: var(--wa-color);
+            width: 65px; height: 65px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; color: white;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 9999; cursor: pointer;
             transition: var(--transition-smooth);
         }
+        .wa-btn:hover { transform: scale(1.1); background: var(--wa-hover); }
+        .wa-btn svg { width: 35px; height: 35px; fill: currentColor; }
 
-        .gallery-card-info h4 {
-            color: white;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* ==========================================================================
-           7. SECCIÓN OPINIONES REALES (DISEÑO GLASS OSCURO)
-           ========================================================================== */
-        .reviews-wrapper {
-            background: var(--premium-gradient);
-            color: white;
-            border-radius: 40px;
-            padding: 80px 40px;
-            margin: 40px 25px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-
-        .reviews-wrapper::after {
-            content: '';
-            position: absolute;
-            bottom: -30%; left: -10%; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .glass-review-box {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            padding: 40px;
-            border-radius: 24px;
-            position: relative;
-            transition: var(--transition-smooth);
-        }
-
-        .glass-review-box:hover {
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-5px);
-        }
-
-        .rating-stars {
-            color: #facc15;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .glass-review-box p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            font-style: italic;
-            color: rgba(241, 245, 249, 0.85);
-        }
-
-        .author-tag {
-            margin-top: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .author-name {
-            font-weight: 700;
-            color: var(--accent);
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* ==========================================================================
-           8. FORMULARIO INTERACTIVO (HACE FUNCIONAR "SOLICITAR PRESUPUESTO")
-           ========================================================================== */
-        .quote-section {
-            background: white;
-            border-radius: 32px;
-            padding: 50px;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.04);
-            margin-top: 40px;
-            border: 1px solid rgba(14, 165, 233, 0.08);
-        }
-
-        .quote-form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: var(--bg-dark);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 16px 20px;
-            border-radius: 14px;
-            border: 2px solid #e2e8f0;
-            background: #f8fafc;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition-smooth);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            background: white;
-            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
-        }
-
-        /* Info de Horarios dentro de Grid */
-        .hours-panel {
-            background: var(--bg-light);
-            border-radius: 24px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-left: 6px solid var(--primary);
-        }
-
-        .hours-list-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #e2e8f0;
-            font-size: 1rem;
-        }
-
-        .hours-list-item:last-child {
-            border-bottom: none;
-        }
-
-        /* ==========================================================================
-           9. ANIMACIÓN DEL BOTÓN FLOTANTE MODERNO DE WHATSAPP
-           ========================================================================== */
-        .wa-floating-btn {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--wa-color);
-            color: white;
-            width: 76px;
-            height: 76px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
-            z-index: 9999;
-            text-decoration: none;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-
-        .wa-floating-btn:hover {
-            transform: scale(1.1) rotate(-8deg);
-            background-color: var(--wa-hover);
-        }
-
-        /* Ondas de radar continuas */
-        .wa-floating-btn::after, .wa-floating-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border-radius: 50%;
-            background-color: var(--wa-color);
-            opacity: 0.6;
-            z-index: -1;
-            animation: wa-radar 2.5s infinite;
-        }
-
-        .wa-floating-btn::before {
-            animation-delay: 1.2s;
-        }
-
-        .wa-floating-btn svg {
-            width: 42px;
-            height: 42px;
-            fill: currentColor;
-        }
-
-        @keyframes wa-radar {
-            0% { transform: scale(1); opacity: 0.6; }
-            100% { transform: scale(1.6); opacity: 0; }
-        }
-
-        /* ==========================================================================
-           10. REVELACIÓN AL HACER SCROLL & RESPONSIVE
-           ========================================================================== */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        footer {
-            background: var(--bg-dark);
-            color: rgba(241, 245, 249, 0.6);
-            text-align: center;
-            padding: 45px 20px;
-            font-size: 0.95rem;
-            border-top: 6px solid var(--primary);
-        }
+        footer { background: var(--bg-dark); color: #94a3b8; text-align: center; padding: 40px 20px; font-size: 0.9rem; }
 
         @media (max-width: 992px) {
-            .quote-form-grid { grid-template-columns: 1fr; gap: 30px; }
-            .hero-content h2 { font-size: 2.6rem; }
+            .b2b-contact-grid { grid-template-columns: 1fr; }
+            .hero-content h2 { font-size: 2.8rem; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
         }
-
         @media (max-width: 768px) {
             .section-wrapper { padding: 60px 20px; }
-            .wa-floating-btn { width: 64px; height: 64px; bottom: 25px; right: 25px; }
-            .wa-floating-btn svg { width: 34px; height: 34px; }
-            .btn-container { flex-direction: column; gap: 15px; }
+            .btn-container { flex-direction: column; }
+            .wa-btn { width: 55px; height: 55px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Profesional -->
     <header>
         <div class="nav-container">
-            <h1>Mecánico Dental</h1>
-            <div class="nav-badge">Atención Directa</div>
+            <h1>Mecánico Dental B2B</h1>
+            <div class="nav-badge">Exclusivo Profesionales</div>
         </div>
     </header>
 
+    <!-- Hero B2B -->
     <section class="hero">
         <div class="carousel-container">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio de Vanguardia" class="carousel-slide active">
-            <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis Estética" class="carousel-slide">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80" alt="Clínica Odontológica Digital" class="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" class="carousel-slide active" alt="Laboratorio CAD/CAM">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80" class="carousel-slide" alt="Protesista trabajando">
         </div>
-        
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <h2>Arte y precisión en cada sonrisa</h2>
-            <p>Soluciones dentales de vanguardia, rápidas y confeccionadas a medida en Santa Teresita.</p>
+            <h2>El Aliado Técnico para tu Consultorio</h2>
+            <p>Confección de prótesis y aparatología dental de alta precisión. Puntualidad y materiales homologados para odontólogos de Santa Teresita y La Costa.</p>
             <div class="btn-container">
-                <button onclick="scrollToQuote()" class="btn-premium">Solicitar Presupuesto</button>
-                <button onclick="openGeneralWhatsapp()" class="btn-premium btn-outline">Consulta Rápida</button>
+                <button onclick="scrollToForm()" class="btn-primary">Enviar Caso / Presupuesto</button>
+                <button onclick="openWhatsApp('lista_precios')" class="btn-primary btn-outline">Solicitar Lista de Precios</button>
             </div>
         </div>
     </section>
 
     <div class="ribbon-bar">
-        Laboratorio de Prótesis Dental Habilitado en la Costa | Atendiendo Urgencias: <span>¡Contáctanos Ahora!</span>
+        Servicio logístico de retiro y entrega de impresiones en clínicas de Santa Teresita. <span>Consultar zonas.</span>
     </div>
 
+    <!-- Servicios Técnicos B2B -->
     <section class="section-wrapper scroll-reveal">
         <div class="section-title-box">
-            <h2>Nuestro Laboratorio</h2>
-            <p>Excelencia técnica respaldada por profesionales comprometidos.</p>
+            <h2>Soluciones de Laboratorio</h2>
+            <p>Procesos estandarizados que aseguran un ajuste perfecto en el sillón, optimizando tu tiempo clínico y la satisfacción de tus pacientes.</p>
         </div>
 
         <div class="grid-3d">
-            <div class="card-premium-3d">
-                <h3>Servicios Especializados</h3>
-                <p>En nuestro centro especializado en diseño y elaboración de prótesis dentales, ofrecemos soluciones personalizadas para cada necesidad. Contamos con un equipo de expertos que se dedica a crear prótesis fijas, flexibles y removibles, así como implantes de alta calidad.</p>
+            <div class="card-tech">
+                <h3>Prótesis Fijas y Removibles</h3>
+                <p>Estructuras metálicas, acrílicos de alto impacto y prótesis flexibles inyectadas con materiales de primera línea. Garantizamos un pulido y terminación estética superior para reducir tiempos de ajuste en el consultorio.</p>
             </div>
-            
-            <div class="card-premium-3d">
-                <h3>Reparaciones en el Acto</h3>
-                <p>Realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que puedas disfrutar de tu sonrisa sin demoras. Ubicados en Santa Teresita, estamos comprometidos con la salud bucal de nuestros pacientes.</p>
+            <div class="card-tech">
+                <h3>Estética y CAD/CAM</h3>
+                <p>Coronas, carillas y puentes en zirconio o disilicato de litio. Precisión micrométrica mediante protocolos digitales para los casos más exigentes de rehabilitación oral.</p>
+            </div>
+            <div class="card-tech">
+                <h3>Reparaciones de Urgencia</h3>
+                <p>Sabemos que la dinámica del consultorio requiere velocidad. Ofrecemos composturas, agregados de piezas y rebasados con prioridad técnica para que tu paciente no espere.</p>
             </div>
         </div>
     </section>
 
-    <section class="section-wrapper scroll-reveal" style="background: rgba(238, 242, 246, 0.5); border-radius: 30px;">
+    <!-- Flujo de Trabajo Logístico -->
+    <section class="section-wrapper scroll-reveal" style="background: white;">
         <div class="section-title-box">
-            <h2>¿Cómo es Nuestro Proceso?</h2>
-            <p>Trabajamos con velocidad, higiene extrema y los mejores estándares para asegurar confort duradero.</p>
+            <h2>Flujo de Trabajo Dinámico</h2>
+            <p>Diseñado para integrarse perfectamente a la rutina de tu clínica.</p>
         </div>
-        
-        <div class="process-container">
-            <div class="process-step">
-                <div class="process-number">1</div>
-                <h4>Contacto Inicial</h4>
-                <p>Envías tu consulta o foto del caso por el formulario inteligente o directamente a WhatsApp.</p>
+        <div class="workflow-grid">
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <h4>Toma de Impresión</h4>
+                <p>El odontólogo realiza la impresión (física o digital) y confecciona la orden de trabajo con las especificaciones.</p>
             </div>
-            <div class="process-step">
-                <div class="process-number">2</div>
-                <h4>Evaluación y Cotización</h4>
-                <p>Analizamos las necesidades específicas y te brindamos un presupuesto transparente sin sorpresas.</p>
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <h4>Logística y Diseño</h4>
+                <p>Recibimos el modelo en el laboratorio, realizamos el vaciado técnico y comenzamos el proceso de diseño estructural.</p>
             </div>
-            <div class="process-step">
-                <div class="process-number">3</div>
-                <h4>Confección Profesional</h4>
-                <p>Elaboramos o reparamos la pieza en nuestro propio laboratorio con materiales premium homologados.</p>
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <h4>Prueba y Terminación</h4>
+                <p>Envíos parciales para prueba de metales o enfilados, asegurando la adaptación antes del pulido final.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="section-wrapper scroll-reveal">
-        <div class="section-title-box">
-            <h2>Tecnología & Calidad Premium</h2>
-            <p>Visualiza el nivel estético e internacional aplicado a cada una de nuestras piezas confeccionadas.</p>
-        </div>
-
-        <div class="premium-gallery">
-            <div class="gallery-card-3d">
-                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Infraestructura Odontológica">
-                <div class="gallery-card-overlay">
-                    <div class="gallery-card-info">
-                        <h4>Infraestructura Moderna</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-card-3d">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="CAD/CAM Dental">
-                <div class="gallery-card-overlay">
-                    <div class="gallery-card-info">
-                        <h4>Precisión Digital CAD/CAM</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-card-3d">
-                <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=600&q=80" alt="Materiales de Alta Gama">
-                <div class="gallery-card-overlay">
-                    <div class="gallery-card-info">
-                        <h4>Materiales de Alta Gama</h4>
-                    </div>
-                </div>
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <h4>Entrega Puntual</h4>
+                <p>Entregamos la pieza terminada en tu clínica en la fecha acordada, lista para su instalación exitosa.</p>
             </div>
         </div>
     </section>
 
-    <section class="section-wrapper scroll-reveal">
-        <div class="reviews-wrapper">
+    <!-- Reseñas (Traduciendo la satisfacción del paciente al valor B2B) -->
+    <section class="scroll-reveal">
+        <div class="reviews-b2b-wrapper">
             <div class="section-title-box" style="margin-bottom: 20px;">
-                <h2 style="color: white;">Lo que dicen nuestros pacientes</h2>
-                <p style="color: rgba(241, 245, 249, 0.6);">Experiencias auténticas de personas que confiaron en nosotros.</p>
+                <h2 style="color: white;">El Impacto de Nuestro Trabajo</h2>
+                <p style="color: #cbd5e1; max-width: 800px;">Nuestro mayor objetivo es que tú, como odontólogo, brilles frente a tus pacientes. Estas son opiniones reales verificadas en Google Maps de pacientes que hoy llevan nuestras confecciones mecánicas:</p>
             </div>
 
             <div class="reviews-grid">
-                <div class="glass-review-box">
-                    <div class="rating-stars">★★★★★</div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
                     <p>"Un genio total me atendió en el día , estaba de vacaciones acá en santa Teresita & me salvo , muy cordial y atento en todo sentido . Gracias"</p>
-                    <div class="author-tag">
-                        <span class="author-name">Rocio Perez</span>
-                    </div>
+                    <div class="review-author">— Rocio Perez (Paciente)</div>
                 </div>
-
-                <div class="glass-review-box">
-                    <div class="rating-stars">★★★★★</div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
                     <p>"Muy recomendable,buen trabajo ,buen trato ,me salvó con un trabajo súper prolijo"</p>
-                    <div class="author-tag">
-                        <span class="author-name">Marcelo Villalba</span>
-                    </div>
+                    <div class="review-author">— Marcelo Villalba (Paciente)</div>
                 </div>
             </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: #94a3b8;">
+                *La precisión de nuestro laboratorio se traduce en pacientes satisfechos para tu clínica.
+            </p>
         </div>
     </section>
 
-    <section id="presupuesto-seccion" class="section-wrapper scroll-reveal">
+    <!-- Formulario para Odontólogos y Horarios Oficiales -->
+    <section id="contacto-clinico" class="section-wrapper scroll-reveal">
         <div class="section-title-box">
-            <h2>Planificación de Consultas</h2>
-            <p>Calcula y envía tus requerimientos directamente al especialista de guardia.</p>
+            <h2>Portal del Odontólogo</h2>
+            <p>Envíanos la orden de tu próximo caso o consulta nuestras tarifas de laboratorio.</p>
         </div>
 
-        <div class="quote-section">
-            <div class="quote-form-grid">
+        <div class="b2b-contact-grid">
+            <!-- Formulario B2B -->
+            <div class="b2b-form">
+                <h3 style="margin-bottom: 25px;">Derivar Trabajo al Laboratorio</h3>
                 
-                <div>
-                    <h3 style="margin-bottom: 25px; font-weight: 700;">Solicitud de Presupuesto Inmediato</h3>
-                    
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="form-name">Nombre Completo</label>
-                        <input type="text" id="form-name" class="form-control" placeholder="Ej. Juan Pérez">
+                        <label>Dr. / Dra. (Nombre y Apellido)</label>
+                        <input type="text" id="dr-name" class="form-control" placeholder="Ej. Dra. Laura Gómez">
                     </div>
-
                     <div class="form-group">
-                        <label for="form-service">Servicio Requerido</label>
-                        <select id="form-service" class="form-control">
-                            <option value="Prótesis Fijas / Flexibles / Removibles">Prótesis (Fija, Flexible o Removible)</option>
-                            <option value="Implantes Dentales">Implantes de Alta Calidad</option>
-                            <option value="Reparación en el Acto Urgent">Reparación en el Acto / Urgencia</option>
-                            <option value="Consulta General">Otro Diagnóstico Integral</option>
-                        </select>
+                        <label>Nombre de la Clínica / Consultorio</label>
+                        <input type="text" id="clinic-name" class="form-control" placeholder="Ej. Odontología Integral">
                     </div>
-
-                    <div class="form-group">
-                        <label for="form-message">Detalles del caso o Comentarios adicionales</label>
-                        <textarea id="form-message" class="form-control" rows="4" placeholder="Cuéntanos brevemente qué necesitas solucionar..."></textarea>
-                    </div>
-
-                    <button onclick="sendBudgetForm()" class="btn-premium" style="width: 100%; border-radius: 14px;">
-                        Enviar Solicitud a WhatsApp
-                    </button>
                 </div>
 
-                <div class="hours-panel">
-                    <div>
-                        <h3 style="margin-bottom: 10px; font-weight: 700; color: var(--bg-dark);">Horarios de Atención</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;">
-                            Ubicados estratégicamente en Santa Teresita, Buenos Aires.
-                        </p>
-                        
-                        <div class="hours-list-item">
-                            <strong>Lunes</strong> <span>9:00 a.m. – 8:00 p.m.</span>
-                        </div>
-                        <div class="hours-list-item">
-                            <strong>Martes</strong> <span>9:00 a.m. – 8:00 p.m.</span>
-                        </div>
-                        <div class="hours-list-item">
-                            <strong>Miércoles</strong> <span>9:00 a.m. – 8:00 p.m.</span>
-                        </div>
-                        <div class="hours-list-item">
-                            <strong>Jueves</strong> <span>9:00 a.m. – 8:00 p.m.</span>
-                        </div>
-                        <div class="hours-list-item">
-                            <strong>Viernes</strong> <span>9:00 a.m. – 8:00 p.m.</span>
-                        </div>
-                        <div class="hours-list-item">
-                            <strong>Sábado</strong> <span>9:00 a.m. – 12:00 p.m.</span>
-                        </div>
-                        <div class="hours-list-item" style="color: #ef4444;">
-                            <strong>Domingo</strong> <span>Cerrado</span>
-                        </div>
-                    </div>
-
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 20px; font-style: italic;">
-                        * Las reparaciones mecánicas se procesan de forma inmediata en el propio laboratorio.
-                    </p>
+                <div class="form-group">
+                    <label>Tipo de Trabajo Requerido</label>
+                    <select id="work-type" class="form-control">
+                        <option value="Prótesis Flexible">Prótesis Flexible / Valplast</option>
+                        <option value="Prótesis Acrílico">Prótesis de Acrílico (Parcial/Completa)</option>
+                        <option value="Cromo Cobalto">Estructura Cromo Cobalto</option>
+                        <option value="Corona/Puente">Corona / Puente (Porcelana/Zirconio)</option>
+                        <option value="Reparación/Compostura">Reparación / Rebasado Urgente</option>
+                        <option value="Placa Miorelajante">Placa Miorelajante / Contención</option>
+                    </select>
                 </div>
 
+                <div class="form-group">
+                    <label>Especificaciones Técnicas (Color, Diente, Detalles)</label>
+                    <textarea id="work-details" class="form-control" rows="3" placeholder="Indique color de guía, requerimientos especiales de diseño, etc."></textarea>
+                </div>
+
+                <button onclick="submitDrForm()" class="btn-primary" style="width: 100%;">Generar Orden por WhatsApp</button>
+            </div>
+
+            <!-- Horarios extraídos de Google Maps -->
+            <div class="hours-panel">
+                <h3 style="margin-bottom: 15px; color: var(--bg-dark);">Horarios de Laboratorio</h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.9rem;">
+                    Recepción de moldes y entregas en Santa Teresita.
+                </p>
+                
+                <div class="hours-item"><strong>Lunes</strong> <span>09:00 - 20:00</span></div>
+                <div class="hours-item"><strong>Martes</strong> <span>09:00 - 20:00</span></div>
+                <div class="hours-item"><strong>Miércoles</strong> <span>09:00 - 20:00</span></div>
+                <div class="hours-item"><strong>Jueves</strong> <span>09:00 - 20:00</span></div>
+                <div class="hours-item"><strong>Viernes</strong> <span>09:00 - 20:00</span></div>
+                <div class="hours-item"><strong>Sábado</strong> <span>09:00 - 12:00</span></div>
+                <div class="hours-item" style="color: #ef4444;"><strong>Domingo</strong> <span>Cerrado</span></div>
             </div>
         </div>
     </section>
 
-    <div onclick="openGeneralWhatsapp()" class="wa-floating-btn" title="Chatear con el Especialista">
-        <svg viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-        </svg>
+    <!-- Botón Flotante WhatsApp -->
+    <div onclick="openWhatsApp('general')" class="wa-btn" title="Atención a Odontólogos">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
     </div>
 
     <footer>
-        <p>&copy; 2026 Mecánico Dental - Santa Teresita. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Laboratorio Mecánico Dental - Santa Teresita. Atención exclusiva a profesionales odontológicos.</p>
     </footer>
 
+    <!-- Lógica JS B2B -->
     <script>
-        // ==========================================
-        //  CONFIGURACIÓN GLOBAL DEL NÚMERO DE TELÉFONO
-        // ==========================================
-        const NUMERO_WHATSAPP = "5492257663924"; 
+        const WA_NUMBER = "5492257663924";
 
-        // 1. Control del Carrusel Ultra-Rápido (2.5 segundos)
+        // Carrusel
         const slides = document.querySelectorAll('.carousel-slide');
         let currentSlide = 0;
-
-        function nextSlide() {
+        setInterval(() => {
             if(slides.length > 0) {
                 slides[currentSlide].classList.remove('active');
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
             }
-        }
-        setInterval(nextSlide, 2500);
+        }, 3500);
 
-        // 2. Desplazamiento Inteligente de "Solicitar Presupuesto"
-        function scrollToQuote() {
-            const element = document.getElementById('presupuesto-seccion');
-            if(element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Scroll Suave
+        function scrollToForm() {
+            document.getElementById('contacto-clinico').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Controlador de WhatsApp Multi-intención
+        function openWhatsApp(tipo) {
+            let mensaje = "";
+            if(tipo === 'lista_precios') {
+                mensaje = "Hola, soy odontólogo/a y me gustaría solicitar la lista de precios actualizada del laboratorio.";
+            } else {
+                mensaje = "Hola, me comunico desde el consultorio para hacer una consulta sobre sus servicios de mecánica dental.";
             }
+            window.open(`https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(mensaje)}`, '_blank');
         }
 
-        // 3. Abrir Consulta General de WhatsApp
-        function openGeneralWhatsapp() {
-            const mensajePredefinido = encodeURIComponent("Hola! Estuve viendo su sitio web y me gustaría hacer una consulta general sobre sus servicios mecánicos dentales.");
-            const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${mensajePredefinido}`;
-            window.open(urlFinal, '_blank', 'noopener,noreferrer');
-        }
+        // Procesamiento del Formulario para Clínicas
+        function submitDrForm() {
+            const drName = document.getElementById('dr-name').value.trim();
+            const clinic = document.getElementById('clinic-name').value.trim();
+            const workType = document.getElementById('work-type').value;
+            const details = document.getElementById('work-details').value.trim();
 
-        // 4. Lógica del Formulario Interactivo (Procesa los datos introducidos por el usuario)
-        function sendBudgetForm() {
-            const nombre = document.getElementById('form-name').value.trim();
-            const servicio = document.getElementById('form-service').value;
-            const comentarios = document.getElementById('form-message').value.trim();
-
-            if (!nombre) {
-                alert("Por favor, introduce tu nombre completo para personalizar tu presupuesto.");
-                document.getElementById('form-name').focus();
+            if(!drName) {
+                alert("Por favor, indique el nombre del profesional a cargo.");
                 return;
             }
 
-            // Construcción del mensaje formateado para enviar a WhatsApp
-            let mensajeWhatsApp = `Hola, mi nombre es *${nombre}*.\n\n`;
-            mensajeWhatsApp += `Me gustaría solicitar un presupuesto para el servicio de: *${servicio}*.\n`;
+            let msg = `*NUEVO CASO CLÍNICO - LABORATORIO*\n\n`;
+            msg += `*Profesional:* ${drName}\n`;
+            if(clinic) msg += `*Clínica/Consultorio:* ${clinic}\n`;
+            msg += `*Trabajo Solicitado:* ${workType}\n\n`;
             
-            if (comentarios) {
-                mensajeWhatsApp += `\n*Detalles adicionales de mi caso:* ${comentarios}`;
-            } else {
-                mensajeWhatsApp += `\nQuedo a la espera de sus comentarios para coordinar una revisión de mi pieza dental.`;
+            if(details) {
+                msg += `*Especificaciones:* ${details}\n\n`;
             }
+            
+            msg += `Aguardamos confirmación de recepción y tiempos estimados de entrega.`;
 
-            const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
-            window.open(urlFinal, '_blank', 'noopener,noreferrer');
+            window.open(`https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        // 5. Animación de Entrada Suave al Hacer Scroll (Intersection Observer)
-        const revealElements = document.querySelectorAll('.scroll-reveal');
-        
-        if ('IntersectionObserver' in window) {
-            const revealCallback = (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            };
-
-            const revealObserver = new IntersectionObserver(revealCallback, {
-                threshold: 0.15,
-                rootMargin: "0px 0px -20px 0px"
-            });
-
-            revealElements.forEach(el => {
-                revealObserver.observe(el);
-            });
-        } else {
-            // Fallback por si el navegador es muy antiguo y no soporta Intersection Observer
-            revealElements.forEach(el => el.classList.add('visible'));
-        }
-
-        // Forzar visibilidad inicial de los elementos que ya están en pantalla arriba
-        window.addEventListener('load', () => {
-            revealElements.forEach(el => {
-                if(el.getBoundingClientRect().top < window.innerHeight) {
-                    el.classList.add('visible');
+        // Animación Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
-        });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
