@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecánico Dental | Experiencia Premium 3D | Santa Teresita</title>
+    <title>Mecánico Dental | Experiencia Premium | Santa Teresita</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@
 
         /* Personalización de la barra de desplazamiento */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
             background: var(--bg-light);
@@ -68,10 +68,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 15px 0;
+            padding: 18px 0;
             z-index: 1000;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
             border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -144,7 +144,7 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(9, 13, 22, 0.95) 0%, rgba(2, 132, 199, 0.55) 100%);
+            background: linear-gradient(135deg, rgba(9, 13, 22, 0.92) 0%, rgba(2, 132, 199, 0.55) 100%);
             z-index: 2;
         }
 
@@ -215,8 +215,24 @@
 
         .btn-outline:hover {
             border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Bar informativa de cinta */
+        .ribbon-bar {
+            background: var(--bg-dark);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-bottom: 2px solid rgba(14, 165, 233, 0.3);
+        }
+        
+        .ribbon-bar span {
+            color: var(--accent);
+            font-weight: 700;
         }
 
         /* ==========================================================================
@@ -292,7 +308,53 @@
         }
 
         /* ==========================================================================
-           5. GALERÍA DE ODONTOLOGÍA PREMIUM DE VANGUARDIA
+           5. BLOQUE DE PROCESO DE TRABAJO PASO A PASO
+           ========================================================================== */
+        .process-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px dashed #cbd5e1;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .process-step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--bg-dark);
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           6. GALERÍA DE ODONTOLOGÍA PREMIUM DE VANGUARDIA
            ========================================================================== */
         .premium-gallery {
             display: grid;
@@ -340,7 +402,7 @@
         }
 
         /* ==========================================================================
-           6. SECCIÓN OPINIONES REALES (DISEÑO GLASS OSCURO)
+           7. SECCIÓN OPINIONES REALES (DISEÑO GLASS OSCURO)
            ========================================================================== */
         .reviews-wrapper {
             background: var(--premium-gradient);
@@ -412,7 +474,7 @@
         }
 
         /* ==========================================================================
-           7. FORMULARIO INTERACTIVO (HACE FUNCIONAR "SOLICITAR PRESUPUESTO")
+           8. FORMULARIO INTERACTIVO (HACE FUNCIONAR "SOLICITAR PRESUPUESTO")
            ========================================================================== */
         .quote-section {
             background: white;
@@ -482,7 +544,7 @@
         }
 
         /* ==========================================================================
-           8. ANIMACIÓN DEL BOTÓN FLOTANTE MODERNO DE WHATSAPP
+           9. ANIMACIÓN DEL BOTÓN FLOTANTE MODERNO DE WHATSAPP
            ========================================================================== */
         .wa-floating-btn {
             position: fixed;
@@ -536,11 +598,11 @@
         }
 
         /* ==========================================================================
-           9. REVELACIÓN AL HACER SCROLL & RESPONSIVE
+           10. REVELACIÓN AL HACER SCROLL & RESPONSIVE
            ========================================================================== */
         .scroll-reveal {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(40px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
@@ -599,6 +661,10 @@
         </div>
     </section>
 
+    <div class="ribbon-bar">
+        Laboratorio de Prótesis Dental Habilitado en la Costa | Atendiendo Urgencias: <span>¡Contáctanos Ahora!</span>
+    </div>
+
     <section class="section-wrapper scroll-reveal">
         <div class="section-title-box">
             <h2>Nuestro Laboratorio</h2>
@@ -614,6 +680,31 @@
             <div class="card-premium-3d">
                 <h3>Reparaciones en el Acto</h3>
                 <p>Realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que puedas disfrutar de tu sonrisa sin demoras. Ubicados en Santa Teresita, estamos comprometidos con la salud bucal de nuestros pacientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-wrapper scroll-reveal" style="background: rgba(238, 242, 246, 0.5); border-radius: 30px;">
+        <div class="section-title-box">
+            <h2>¿Cómo es Nuestro Proceso?</h2>
+            <p>Trabajamos con velocidad, higiene extrema y los mejores estándares para asegurar confort duradero.</p>
+        </div>
+        
+        <div class="process-container">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <h4>Contacto Inicial</h4>
+                <p>Envías tu consulta o foto del caso por el formulario inteligente o directamente a WhatsApp.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <h4>Evaluación y Cotización</h4>
+                <p>Analizamos las necesidades específicas y te brindamos un presupuesto transparente sin sorpresas.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <h4>Confección Profesional</h4>
+                <p>Elaboramos o reparamos la pieza en nuestro propio laboratorio con materiales premium homologados.</p>
             </div>
         </div>
     </section>
@@ -656,7 +747,7 @@
         <div class="reviews-wrapper">
             <div class="section-title-box" style="margin-bottom: 20px;">
                 <h2 style="color: white;">Lo que dicen nuestros pacientes</h2>
-                <p style="color: rgba(241, 245, 249, 0.6);">Experiencias auténticas verificadas en Google Maps.</p>
+                <p style="color: rgba(241, 245, 249, 0.6);">Experiencias auténticas de personas que confiaron en nosotros.</p>
             </div>
 
             <div class="reviews-grid">
@@ -765,4 +856,99 @@
         <p>&copy; 2026 Mecánico Dental - Santa Teresita. Todos los derechos reservados.</p>
     </footer>
 
-    
+    <script>
+        // ==========================================
+        //  CONFIGURACIÓN GLOBAL DEL NÚMERO DE TELÉFONO
+        // ==========================================
+        const NUMERO_WHATSAPP = "5492257663924"; 
+
+        // 1. Control del Carrusel Ultra-Rápido (2.5 segundos)
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            if(slides.length > 0) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+        }
+        setInterval(nextSlide, 2500);
+
+        // 2. Desplazamiento Inteligente de "Solicitar Presupuesto"
+        function scrollToQuote() {
+            const element = document.getElementById('presupuesto-seccion');
+            if(element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // 3. Abrir Consulta General de WhatsApp
+        function openGeneralWhatsapp() {
+            const mensajePredefinido = encodeURIComponent("Hola! Estuve viendo su sitio web y me gustaría hacer una consulta general sobre sus servicios mecánicos dentales.");
+            const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${mensajePredefinido}`;
+            window.open(urlFinal, '_blank', 'noopener,noreferrer');
+        }
+
+        // 4. Lógica del Formulario Interactivo (Procesa los datos introducidos por el usuario)
+        function sendBudgetForm() {
+            const nombre = document.getElementById('form-name').value.trim();
+            const servicio = document.getElementById('form-service').value;
+            const comentarios = document.getElementById('form-message').value.trim();
+
+            if (!nombre) {
+                alert("Por favor, introduce tu nombre completo para personalizar tu presupuesto.");
+                document.getElementById('form-name').focus();
+                return;
+            }
+
+            // Construcción del mensaje formateado para enviar a WhatsApp
+            let mensajeWhatsApp = `Hola, mi nombre es *${nombre}*.\n\n`;
+            mensajeWhatsApp += `Me gustaría solicitar un presupuesto para el servicio de: *${servicio}*.\n`;
+            
+            if (comentarios) {
+                mensajeWhatsApp += `\n*Detalles adicionales de mi caso:* ${comentarios}`;
+            } else {
+                mensajeWhatsApp += `\nQuedo a la espera de sus comentarios para coordinar una revisión de mi pieza dental.`;
+            }
+
+            const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
+            window.open(urlFinal, '_blank', 'noopener,noreferrer');
+        }
+
+        // 5. Animación de Entrada Suave al Hacer Scroll (Intersection Observer)
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        if ('IntersectionObserver' in window) {
+            const revealCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            };
+
+            const revealObserver = new IntersectionObserver(revealCallback, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -20px 0px"
+            });
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+        } else {
+            // Fallback por si el navegador es muy antiguo y no soporta Intersection Observer
+            revealElements.forEach(el => el.classList.add('visible'));
+        }
+
+        // Forzar visibilidad inicial de los elementos que ya están en pantalla arriba
+        window.addEventListener('load', () => {
+            revealElements.forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
