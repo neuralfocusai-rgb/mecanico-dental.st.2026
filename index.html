@@ -3,59 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecánico Dental | Santa Teresita</title>
+    <title>Mecánico Dental | Experiencia 3D | Santa Teresita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilos Generales y Variables */
+        /* Variables de colores modernos */
         :root {
-            --primary-color: #003b5c;
-            --accent-color: #25d366;
-            --text-color: #333;
-            --bg-color: #f8f9fa;
+            --bg-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --accent: #38bdf8;
+            --wa-color: #25D366;
+            --text-main: #334155;
+            --text-light: #f1f5f9;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* Cabecera */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Header con Glassmorphism (Efecto Vidrio) */
         header {
-            background: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         header h1 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: linear-gradient(to right, var(--primary-dark), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-size: 1.8rem;
         }
 
-        /* Carrusel Hero Section */
+        /* Hero Carousel 3D */
         .hero {
             position: relative;
             height: 100vh;
-            width: 100%;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            margin-top: 60px; /* Compensa el header fijo */
+            perspective: 1000px;
         }
 
         .carousel-slide {
@@ -66,174 +82,215 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            transform: scale(1.1);
+            transition: opacity 1.5s ease, transform 6s ease;
             z-index: 1;
         }
 
         .carousel-slide.active {
             opacity: 1;
+            transform: scale(1);
         }
 
-        .hero-overlay {
+        .overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 30, 50, 0.6);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(2,132,199,0.5) 100%);
             z-index: 2;
         }
 
         .hero-content {
             position: relative;
             z-index: 3;
-            color: #fff;
-            padding: 0 20px;
+            text-align: center;
+            color: var(--text-light);
             max-width: 800px;
+            padding: 20px;
+            transform: translateZ(50px);
         }
 
         .hero-content h2 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
+            font-weight: 900;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 40px;
         }
 
-        /* Botón WhatsApp */
-        .btn {
+        /* Botón Moderno */
+        .btn-modern {
             display: inline-block;
-            background: var(--accent-color);
-            color: #fff;
-            padding: 15px 35px;
-            text-decoration: none;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            padding: 18px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, background 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn:hover {
-            background: #128c7e;
-            transform: scale(1.05);
+        .btn-modern:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(2, 132, 199, 0.6);
         }
 
-        /* Secciones de Contenido */
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 40px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        /* Secciones y Efectos Scroll */
+        .section {
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        h3 {
-            color: var(--primary-color);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            text-align: center;
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
         }
 
-        .services-text {
-            text-align: justify;
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 20px;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Grilla de Horarios y Contacto */
-        .info-grid {
+        /* Tarjetas 3D */
+        .card-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
 
-        .info-box {
-            background: var(--bg-color);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .info-box h4 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .info-box ul {
-            list-style: none;
-        }
-
-        .info-box ul li {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Opiniones */
-        .reviews {
-            margin-top: 40px;
-        }
-
-        .review-card {
-            background: var(--bg-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-style: italic;
+        .card-3d {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
             position: relative;
         }
 
-        .review-card::before {
-            content: "“";
-            font-size: 4rem;
-            color: #ccc;
+        .card-3d:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 30px 60px rgba(14, 165, 233, 0.15);
+        }
+
+        .card-3d::before {
+            content: '';
             position: absolute;
-            top: -10px;
-            left: 10px;
-            font-family: serif;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 20px 20px 0 0;
         }
 
-        .review-author {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            font-style: normal;
-            color: var(--primary-color);
-            text-align: right;
+        .card-3d h3 {
+            color: var(--bg-dark);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transform: translateZ(30px); /* Efecto pop-out */
         }
 
-        .stars {
-            color: #FFD700;
-            margin-bottom: 10px;
+        .card-3d p {
+            color: #64748b;
+            line-height: 1.8;
+            transform: translateZ(20px);
+        }
+
+        /* Sección Opiniones */
+        .reviews-section {
+            background: var(--bg-dark);
+            color: white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reviews-section::after {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%; width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--primary-dark) 0%, transparent 70%);
+            opacity: 0.3;
+            border-radius: 50%;
+        }
+
+        .review-box {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stars { color: #facc15; font-size: 1.2rem; margin-bottom: 10px; }
+
+        /* Botón Flotante WhatsApp Animado */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--wa-color);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            animation: pulse-wa 2s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1) rotate(-10deg);
+        }
+
+        .wa-float svg {
+            width: 40px;
+            height: 40px;
+            fill: currentColor;
+        }
+
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         /* Footer */
         footer {
-            background: var(--primary-color);
-            color: #fff;
+            background: var(--bg-dark);
+            color: rgba(255,255,255,0.7);
             text-align: center;
-            padding: 30px;
-            margin-top: 60px;
+            padding: 40px 20px;
+            border-top: 5px solid var(--primary);
         }
 
-        /* Responsivo */
         @media (max-width: 768px) {
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-content h2 {
-                font-size: 2rem;
-            }
+            .hero-content h2 { font-size: 2.2rem; }
+            .section { padding: 60px 20px; }
+            .wa-float { width: 60px; height: 60px; bottom: 20px; right: 20px; }
+            .wa-float svg { width: 35px; height: 35px; }
         }
     </style>
 </head>
@@ -244,83 +301,113 @@
     </header>
 
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio Dental" class="carousel-slide active">
-        <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis Dental" class="carousel-slide">
-        <img src="https://images.unsplash.com/photo-1600170560882-96944b360ea1?auto=format&fit=crop&w=1920&q=80" alt="Herramientas Dentales" class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio" class="carousel-slide active">
+        <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis" class="carousel-slide">
         
-        <div class="hero-overlay"></div>
+        <div class="overlay"></div>
         
-        <div class="hero-content">
-            <h2>Tu sonrisa, nuestra prioridad</h2>
-            <p>Soluciones dentales rápidas, precisas y a medida en Santa Teresita.</p>
-            <a href="https://wa.me/549XXXXXXXXXX" class="btn">Contactar ahora</a>
+        <div class="hero-content reveal active">
+            <h2>Arte y precisión en cada sonrisa</h2>
+            <p>Soluciones dentales de vanguardia, rápidas y a medida en Santa Teresita.</p>
+            <a href="https://wa.me/549XXXXXXXXXX" class="btn-modern">Solicitar Presupuesto</a>
         </div>
     </section>
 
-    <main class="container">
-        <h3>Sobre Nuestro Centro</h3>
-        <p class="services-text">
-            En nuestro centro especializado en diseño y elaboración de prótesis dentales, ofrecemos soluciones personalizadas para cada necesidad. Contamos con un equipo de expertos que se dedica a crear <strong>prótesis fijas, flexibles y removibles</strong>, así como <strong>implantes de alta calidad</strong>.
-        </p>
-        <p class="services-text">
-            Realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que puedas disfrutar de tu sonrisa sin demoras. Ubicados en Santa Teresita, estamos comprometidos con la salud bucal de nuestros pacientes.
-        </p>
-
-        <div class="info-grid">
-            <div class="info-box">
-                <h4>Horarios de Atención</h4>
-                <ul>
-                    <li><span>Lunes a Viernes</span> <span>9:00 a.m. – 8:00 p.m.</span></li>
-                    <li><span>Sábado</span> <span>9:00 a.m. – 12:00 p.m.</span></li>
-                    <li><span>Domingo</span> <span>Cerrado</span></li>
-                </ul>
-            </div>
-            <div class="info-box">
-                <h4>Ubicación y Contacto</h4>
-                <p><strong>Ubicación:</strong> Santa Teresita, Buenos Aires.</p>
-                <br>
-                <p><strong>Atención Rápida:</strong> Reparaciones en el acto y presupuestos personalizados.</p>
-            </div>
+    <section class="section reveal">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.5rem; color: var(--bg-dark);">Nuestro Laboratorio</h2>
+            <p style="color: #64748b; font-size: 1.2rem; margin-top: 10px;">Excelencia respaldada por profesionales.</p>
         </div>
 
-        <div class="reviews">
-            <h3>Opiniones de nuestros pacientes</h3>
+        <div class="card-container">
+            <div class="card-3d">
+                <h3>Servicios Especializados</h3>
+                <p>En nuestro centro especializado en diseño y elaboración de prótesis dentales, ofrecemos soluciones personalizadas para cada necesidad. Dedicados a crear prótesis fijas, flexibles y removibles de la más alta estética.</p>
+            </div>
             
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                "Un genio total me atendió en el día, estaba de vacaciones acá en Santa Teresita y me salvó, muy cordial y atento en todo sentido. Gracias."
-                <span class="review-author">- Rocio Perez</span>
+            <div class="card-3d">
+                <h3>Implantes & Reparaciones</h3>
+                <p>Trabajamos con implantes de alta calidad y materiales de última generación. Además, realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que disfrutes de tu sonrisa sin demoras.</p>
             </div>
+        </div>
+    </section>
 
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                "Muy recomendable, buen trabajo, buen trato, me salvó con un trabajo súper prolijo."
-                <span class="review-author">- Marcelo Villalba</span>
+    <section class="reviews-section reveal">
+        <h2 style="font-size: 2.2rem; margin-bottom: 40px; text-align: center;">Lo que dicen nuestros pacientes</h2>
+        
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <p><em>"Un genio total me atendió en el día, estaba de vacaciones acá en Santa Teresita y me salvó, muy cordial y atento en todo sentido. Gracias."</em></p>
+            <h4 style="margin-top: 15px; color: var(--accent);">- Rocio Perez</h4>
+        </div>
+
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <p><em>"Muy recomendable, buen trabajo, buen trato, me salvó con un trabajo súper prolijo."</em></p>
+            <h4 style="margin-top: 15px; color: var(--accent);">- Marcelo Villalba</h4>
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <div class="card-container" style="margin-top: 0;">
+            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9);">
+                <h3 style="color: var(--primary-dark);">Horarios de Atención</h3>
+                <p><strong>Lunes a Viernes:</strong> 9:00 a.m. – 8:00 p.m.</p>
+                <p><strong>Sábado:</strong> 9:00 a.m. – 12:00 p.m.</p>
+                <p><strong>Domingo:</strong> Cerrado</p>
+            </div>
+            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9);">
+                <h3 style="color: var(--primary-dark);">Ubicación</h3>
+                <p><strong>Santa Teresita, Buenos Aires.</strong></p>
+                <p style="margin-top: 15px;">Comprometidos con la salud bucal de nuestros pacientes con atención inmediata.</p>
             </div>
         </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-             <a href="https://wa.me/549XXXXXXXXXX" class="btn">Solicitar Turno o Presupuesto</a>
-        </div>
-    </main>
+    </section>
+
+    <a href="https://wa.me/549XXXXXXXXXX" class="wa-float" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
 
     <footer>
         <p>&copy; 2026 Mecánico Dental - Santa Teresita. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.carousel-slide');
-            let currentSlide = 0;
+        // Lógica del Carrusel
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
 
-            function nextSlide() {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 5000);
 
-            // Cambia de imagen cada 4 segundos (4000 milisegundos)
-            setInterval(nextSlide, 4000);
+        // Animación de Aparición al hacer Scroll (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Opcional: dejar de observar una vez que aparece
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        };
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
         });
     </script>
 </body>
