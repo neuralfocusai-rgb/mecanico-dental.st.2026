@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecánico Dental | Experiencia 3D | Santa Teresita</title>
+    <title>Mecánico Dental | Experiencia Premium 3D | Santa Teresita</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        /* Variables de colores modernos */
+        /* Variables de colores modernos y vibrantes */
         :root {
             --bg-dark: #0f172a;
             --bg-light: #f8fafc;
@@ -63,7 +63,7 @@
             font-size: 1.8rem;
         }
 
-        /* Hero Carousel 3D */
+        /* Hero Carousel Rápido */
         .hero {
             position: relative;
             height: 100vh;
@@ -71,7 +71,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            perspective: 1000px;
+            text-align: center;
+            margin-top: 60px;
         }
 
         .carousel-slide {
@@ -83,7 +84,7 @@
             object-fit: cover;
             opacity: 0;
             transform: scale(1.1);
-            transition: opacity 1.5s ease, transform 6s ease;
+            transition: opacity 0.8s ease-in-out, transform 3s ease-in-out;
             z-index: 1;
         }
 
@@ -95,7 +96,7 @@
         .overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(2,132,199,0.5) 100%);
+            background: linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(2,132,199,0.6) 100%);
             z-index: 2;
         }
 
@@ -106,7 +107,6 @@
             color: var(--text-light);
             max-width: 800px;
             padding: 20px;
-            transform: translateZ(50px);
         }
 
         .hero-content h2 {
@@ -137,8 +137,6 @@
             text-decoration: none;
             box-shadow: 0 10px 30px rgba(2, 132, 199, 0.4);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-modern:hover {
@@ -148,15 +146,15 @@
 
         /* Secciones y Efectos Scroll */
         .section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            transform: translateY(40px);
+            transition: all 0.7s ease-out;
         }
 
         .reveal.active {
@@ -169,7 +167,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
         .card-3d {
@@ -177,15 +175,14 @@
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             position: relative;
         }
 
         .card-3d:hover {
-            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
-            box-shadow: 0 30px 60px rgba(14, 165, 233, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(14, 165, 233, 0.12);
         }
 
         .card-3d::before {
@@ -200,13 +197,51 @@
             color: var(--bg-dark);
             font-size: 1.5rem;
             margin-bottom: 20px;
-            transform: translateZ(30px); /* Efecto pop-out */
         }
 
         .card-3d p {
             color: #64748b;
             line-height: 1.8;
-            transform: translateZ(20px);
+        }
+
+        /* NUEVA SECCIÓN: Galería de Odontología Premium */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.12);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 40%;
+            background: linear-gradient(to top, rgba(15,23,42,0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         /* Sección Opiniones */
@@ -220,19 +255,10 @@
             overflow: hidden;
         }
 
-        .reviews-section::after {
-            content: '';
-            position: absolute;
-            top: -50%; right: -20%; width: 500px; height: 500px;
-            background: radial-gradient(circle, var(--primary-dark) 0%, transparent 70%);
-            opacity: 0.3;
-            border-radius: 50%;
-        }
-
         .review-box {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.04);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.08);
             padding: 30px;
             border-radius: 15px;
             margin-bottom: 20px;
@@ -301,8 +327,9 @@
     </header>
 
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio" class="carousel-slide active">
-        <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis" class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1920&q=80" alt="Laboratorio Fijo" class="carousel-slide active">
+        <img src="https://images.unsplash.com/photo-1598256989800-fea5f61bdc27?auto=format&fit=crop&w=1920&q=80" alt="Prótesis de Precisión" class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1920&q=80" alt="Clínica Moderna" class="carousel-slide">
         
         <div class="overlay"></div>
         
@@ -322,12 +349,34 @@
         <div class="card-container">
             <div class="card-3d">
                 <h3>Servicios Especializados</h3>
-                <p>En nuestro centro especializado en diseño y elaboración de prótesis dentales, ofrecemos soluciones personalizadas para cada necesidad. Dedicados a crear prótesis fijas, flexibles y removibles de la más alta estética.</p>
+                <p>En nuestro centro especializado en diseño y elaboración de prótesis dentales, ofrecemos soluciones personalizadas para cada necesidad. Contamos con un equipo de expertos que se dedica a crear prótesis fijas, flexibles y removibles, así como implantes de alta calidad.</p>
             </div>
             
             <div class="card-3d">
-                <h3>Implantes & Reparaciones</h3>
-                <p>Trabajamos con implantes de alta calidad y materiales de última generación. Además, realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que disfrutes de tu sonrisa sin demoras.</p>
+                <h3>Reparaciones en el Acto</h3>
+                <p>Realizamos reparaciones en el acto, garantizando un servicio rápido y eficiente para que puedas disfrutar de tu sonrisa sin demoras. Ubicados en Santa Teresita, estamos comprometidos con la salud bucal de nuestros pacientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reveal">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 2.3rem; color: var(--bg-dark);">Tecnología & Calidad Premium</h2>
+            <p style="color: #64748b;">Estándares internacionales aplicados a cada diseño digital y pieza confeccionada.</p>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Clínica Dental Premium">
+                <div class="gallery-overlay">Infraestructura Moderna</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Alta Tecnología Odontológica">
+                <div class="gallery-overlay">Precisión Digital CAD/CAM</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=600&q=80" alt="Estética Dental Avanzada">
+                <div class="gallery-overlay">Materiales de Alta Gama</div>
             </div>
         </div>
     </section>
@@ -350,17 +399,21 @@
 
     <section class="section reveal">
         <div class="card-container" style="margin-top: 0;">
-            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9);">
-                <h3 style="color: var(--primary-dark);">Horarios de Atención</h3>
-                <p><strong>Lunes a Viernes:</strong> 9:00 a.m. – 8:00 p.m.</p>
-                <p><strong>Sábado:</strong> 9:00 a.m. – 12:00 p.m.</p>
+            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-left: 5px solid var(--primary);">
+                <h3 style="color: var(--primary-dark); font-size: 1.4rem;">Horarios de Atención</h3>
+                <p style="margin-bottom: 5px;"><strong>Lunes a Viernes:</strong> 9:00 a.m. – 8:00 p.m.</p>
+                <p style="margin-bottom: 5px;"><strong>Sábado:</strong> 9:00 a.m. – 12:00 p.m.</p>
                 <p><strong>Domingo:</strong> Cerrado</p>
             </div>
-            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9);">
-                <h3 style="color: var(--primary-dark);">Ubicación</h3>
+            <div class="card-3d" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-left: 5px solid var(--primary);">
+                <h3 style="color: var(--primary-dark); font-size: 1.4rem;">Ubicación</h3>
                 <p><strong>Santa Teresita, Buenos Aires.</strong></p>
-                <p style="margin-top: 15px;">Comprometidos con la salud bucal de nuestros pacientes con atención inmediata.</p>
+                <p style="margin-top: 15px; font-size: 0.95rem; color: #64748b;">Atención inmediata y soluciones directas de laboratorio.</p>
             </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="https://wa.me/549XXXXXXXXXX" class="btn-modern">Solicitá una Consulta Integral</a>
         </div>
     </section>
 
@@ -375,7 +428,7 @@
     </footer>
 
     <script>
-        // Lógica del Carrusel
+        // Lógica del Carrusel ACELERADA a 2.5 segundos (2500ms)
         const slides = document.querySelectorAll('.carousel-slide');
         let currentSlide = 0;
 
@@ -384,24 +437,22 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 2500);
 
-        // Animación de Aparición al hacer Scroll (Intersection Observer)
+        // Animación de Aparición Dinámica al hacer Scroll
         const revealElements = document.querySelectorAll('.reveal');
 
-        const revealCallback = (entries, observer) => {
+        const revealCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    // Opcional: dejar de observar una vez que aparece
-                    // observer.unobserve(entry.target); 
                 }
             });
         };
 
         const revealOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
+            threshold: 0.12,
+            rootMargin: "0px 0px -40px 0px"
         };
 
         const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
